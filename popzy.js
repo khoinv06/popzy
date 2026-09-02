@@ -1,6 +1,5 @@
 
 Popzy.elements = [];
-
 function Popzy(options = {}) {
     this.opt = Object.assign(
         {
@@ -12,6 +11,7 @@ function Popzy(options = {}) {
         options
     );
     this.template = document.querySelector(`#${this.opt.templateId}`);
+    this._footerButtons = [];
 
     if (!this.template) {
         console.error(`#${this.opt.templateId} does not exist!`);
@@ -23,7 +23,7 @@ function Popzy(options = {}) {
     this._allowBackdropClose = closeMethods.includes("overlay");
     this._allowEscapeClose = closeMethods.includes("escape");
 
-    this._footerButtons = [];
+    // this._footerButtons = [];
 
     this._handleEscapeKey = this._handleEscapeKey.bind(this);
 }

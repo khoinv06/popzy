@@ -8,25 +8,22 @@
             content="Popzy.js is a lightweight and user-friendly modal library written in pure JavaScript. It is designed for great user experience (2kB, no dependencies, fully customizable with CSS)."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <!-- <link rel="stylesheet" href="./assets/styles.css" media="all" /> -->
         <link rel="stylesheet" href="./assets/styles.css" media="all" />
+        <link rel="stylesheet" href="./assets/highlight/styles.css" media="all" />
         <link rel="stylesheet" href="./popzy.css" />
         <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
     </head>
     <body>
-        <!-- HEADER -->
         <header class="header">
             <div class="container">
                 <h1 class="header__title">Popzy.js</h1>
                 <div class="header__tagline">A lightweight and simple modal library built with pure JavaScript.</div>
                 <a href="https://github.com/khoinv06/popzy" class="header__github" target="_blank"
-                    ><img src="./assets/github.svg" alt="View on GitHub"
+                    ><img src="./assets/highlight/github.svg" alt="View on GitHub"
                 /></a>
             </div>
         </header>
-        <!-- /HEADER -->
 
-        <!-- CONTAINER -->
         <div class="container content">
             <h2 data-bullet="1" class="title" id="try-it-out">Try It Out</h2>
             <p>
@@ -54,7 +51,6 @@
             <button class="btn btn--secondary btn-demo js-popzy-modal-5">Persistent Modal (Stays in DOM)</button>
             <button class="btn btn--secondary btn-demo js-popzy-modal-6">Multiple Modals</button>
             <button class="btn btn--secondary btn-demo js-popzy-modal-7">YouTube Embed Modal</button>
-
             <h2 data-bullet="2" class="title" id="installation">Installation</h2>
             <table class="methods">
                 <thead>
@@ -106,10 +102,8 @@
             </blockquote>
 
             <h2 data-bullet="3" class="title" id="usage">Usage</h2>
-            <pre class="javascript"><code>// Initialize a new modal
-const modal = new Popzy({
-    content: '&lt;h1&gt;This is content&lt;/h1&gt;',
-    // templateId: 'my-modal-template',
+            <pre class="javascript"><code>const modal = new Popzy({
+    templateId: 'my-modal-template',
     footer: true,
     destroyOnClose: false,
     closeMethods: ['overlay', 'button', 'escape'],
@@ -122,10 +116,6 @@ const modal = new Popzy({
     },
 });
 
-// Set modal content
-modal.setContent('&lt;h1&gt;This is new content&lt;/h1&gt;');
-
-// Add footer buttons
 modal.addFooterBtn('Cancel', 'btn btn--default', function(e) {
     modal.close();
 });
@@ -134,10 +124,8 @@ modal.addFooterBtn('Confirm', 'btn btn--primary', function(e) {
     modal.close();
 });
 
-// Open the modal
 modal.open();
 
-// Close the modal
 modal.close();</code></pre>
 
             <p>
@@ -154,10 +142,6 @@ modal.close();</code></pre>
 &lt;/template&gt;
 </code>
 </pre>
-            <p>
-                <strong>Note:</strong> When using <code>templateId</code>, do not provide <code>content</code>. If both
-                are specified, <code>content</code> will take precedence, and <code>templateId</code> will be ignored.
-            </p>
 
             <h2 data-bullet="4" class="title" id="options">Options</h2>
             <table class="methods">
@@ -169,13 +153,9 @@ modal.close();</code></pre>
                     </tr>
                 </thead>
                 <tr>
-                    <td>content, templateId</td>
+                    <td>templateId</td>
                     <td>string</td>
-                    <td>
-                        One of <code>content</code> or <code>templateId</code> is required to set the modal content.
-                        <code>content</code> accepts an HTML string, while <code>templateId</code> specifies the ID of a
-                        template element. If both are provided, <code>content</code> will take precedence.
-                    </td>
+                    <td>Specifies the ID of a <code>&lt;template&gt;</code> element to set modal content.</td>
                 </tr>
                 <tr>
                     <td>cssClass</td>
@@ -236,7 +216,6 @@ modal.close();</code></pre>
                 </tr>
             </table>
 
-            <!-- Styling section -->
             <h2 data-bullet="5" class="title" id="styling">Styling</h2>
             <p>Popzy styles are defined in CSS. You can fully customize it to meet your design requirements.</p>
 
@@ -297,7 +276,6 @@ modal.close();</code></pre>
                 <a href="https://github.com/sondnpt00343/popzy/blob/main/src/popzy.css" target="_blank">popzy.css</a>.
             </p>
 
-            <!-- API section -->
             <h2 data-bullet="6" class="title" id="api">API</h2>
             <table class="methods">
                 <thead>
@@ -347,35 +325,103 @@ modal.close();</code></pre>
                 </p>
             </footer>
         </div>
-        <!-- /CONTAINER -->
 
-        <script src="./assets/highlight.js"></script>
+        <template id="js-popzy-modal-1">
+            <h2>Basic Modal</h2>
+            <p>This is a simple modal. You can customize its content as per your requirements.</p>
+        </template>
+
+        <template id="js-popzy-modal-2">
+            <h2>Modal with Buttons</h2>
+            <p>This modal includes functional buttons for actions such as canceling or confirming.</p>
+        </template>
+
+        <template id="js-popzy-modal-3">
+            <h2>Large Content Modal</h2>
+            <p>This modal contains a large amount of content, suitable for displaying extended text or information.</p>
+            <p>Please scroll down to view the entire content.</p>
+            <p>The content can include multiple paragraphs, images, or other detailed information.</p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua.
+            </p>
+            <p>
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat.
+            </p>
+            <p>
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            </p>
+            <p>
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                laborum.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua.
+            </p>
+            <p>
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat.
+            </p>
+        </template>
+
+        <template id="js-popzy-modal-4">
+            <h2>Footer-Only Close Modal</h2>
+            <p>This modal can only be closed via the button in the footer for a controlled experience.</p>
+        </template>
+
+        <template id="js-popzy-modal-5">
+            <h2>Persistent Modal</h2>
+            <p>
+                This modal stays in the DOM even after being closed, allowing you to reopen it without losing any
+                changes.
+            </p>
+            <p>
+                You can write something in the input below, close the modal, and reopen it to see the content still
+                intact.
+            </p>
+            <input
+                type="text"
+                placeholder="Type something here..."
+                class="modal-input"
+                style="width: 100%; padding: 10px; margin-top: 10px; border: 1px solid #ccc; border-radius: 4px"
+            />
+        </template>
+
+        <template id="js-popzy-modal-6">
+            <h2>Multiple Modals</h2>
+            <p>This modal demonstrates interaction between multiple modals. You can open another modal from here.</p>
+            <button class="btn btn--primary" onclick="modal1.open()">Open Basic Modal</button>
+        </template>
+
+        <template id="js-popzy-modal-7">
+            <h2>YouTube Video</h2>
+            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-top: 10px">
+                <iframe
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0"
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                    allowfullscreen
+                ></iframe>
+            </div>
+        </template>
+
+        <script src="./assets/highlight/highlight.js"></script>
         <script src="./popzy.js"></script>
         <script>
-            // Highlight code
             hljs.initHighlightingOnLoad();
 
-            // Modal samples
-
-            // Basic Modal
             const modal1Btn = document.querySelector(".js-popzy-modal-1");
             const modal1 = new Popzy({
-                content: `
-                    <h1>Basic Modal</h1>
-                    <p>This is a simple modal. You can customize its content as per your requirements.</p>
-                `,
+                templateId: "js-popzy-modal-1",
             });
             modal1Btn.onclick = () => {
                 modal1.open();
             };
 
-            // Modal with Buttons
             const modal2Btn = document.querySelector(".js-popzy-modal-2");
             const modal2 = new Popzy({
-                content: `
-                    <h1>Modal with Buttons</h1>
-                    <p>This modal includes functional buttons for actions such as canceling or confirming.</p>
-                `,
+                templateId: "js-popzy-modal-2",
                 footer: true,
             });
             modal2.addFooterButton("Cancel", "modal-btn", () => {
@@ -389,39 +435,17 @@ modal.close();</code></pre>
                 modal2.open();
             };
 
-            // Large Content Modal
             const modal3Btn = document.querySelector(".js-popzy-modal-3");
             const modal3 = new Popzy({
-                content: `
-                    <h1>Large Content Modal</h1>
-                    <p>This modal contains a large amount of content, suitable for displaying extended text or information.</p>
-                    <p>Please scroll down to view the entire content.</p>
-                    <p>The content can include multiple paragraphs, images, or other detailed information.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil cumque adipisci mollitia voluptatibus explicabo non perspiciatis eaque sed qui. Est.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil cumque adipisci mollitia voluptatibus explicabo non perspiciatis eaque sed qui. Est.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil cumque adipisci mollitia voluptatibus explicabo non perspiciatis eaque sed qui. Est.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil cumque adipisci mollitia voluptatibus explicabo non perspiciatis eaque sed qui. Est.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil cumque adipisci mollitia voluptatibus explicabo non perspiciatis eaque sed qui. Est.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil cumque adipisci mollitia voluptatibus explicabo non perspiciatis eaque sed qui. Est.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil cumque adipisci mollitia voluptatibus explicabo non perspiciatis eaque sed qui. Est.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil cumque adipisci mollitia voluptatibus explicabo non perspiciatis eaque sed qui. Est.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil cumque adipisci mollitia voluptatibus explicabo non perspiciatis eaque sed qui. Est.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil cumque adipisci mollitia voluptatibus explicabo non perspiciatis eaque sed qui. Est.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil cumque adipisci mollitia voluptatibus explicabo non perspiciatis eaque sed qui. Est.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil cumque adipisci mollitia voluptatibus explicabo non perspiciatis eaque sed qui. Est.</p>
-                `,
+                templateId: "js-popzy-modal-3",
             });
             modal3Btn.onclick = () => {
                 modal3.open();
             };
 
-            // Footer-Only Close Modal
             const modal4Btn = document.querySelector(".js-popzy-modal-4");
             const modal4 = new Popzy({
-                content: `
-                    <h1>Footer-Only Close Modal</h1>
-                    <p>This modal can only be closed via the button in the footer for a controlled experience.</p>
-                `,
+                templateId: "js-popzy-modal-4",
                 footer: true,
                 closeMethods: [],
             });
@@ -432,38 +456,26 @@ modal.close();</code></pre>
                 modal4.open();
             };
 
-            // Persistent Modal
             const modal5Btn = document.querySelector(".js-popzy-modal-5");
             const modal5 = new Popzy({
-                content: `
-                    <h1>Persistent Modal</h1>
-                    <p>This modal stays in the DOM even after being closed, allowing you to reopen it without losing any changes.</p>
-                    <p>You can write something in the input below, close the modal, and reopen it to see the content still intact.</p>
-                    <input type="text" placeholder="Type something here..." class="modal-input" style="width: 100%; padding: 10px; margin-top: 10px;" />
-                `,
+                templateId: "js-popzy-modal-5",
                 destroyOnClose: false,
             });
             modal5Btn.onclick = () => {
                 modal5.open();
             };
 
-            // Multiple Modals
             const modal6Btn = document.querySelector(".js-popzy-modal-6");
             const modal6 = new Popzy({
-                content: `
-                    <h1>Multiple Modals</h1>
-                    <p>This modal demonstrates interaction between multiple modals. You can open another modal from here.</p>
-                    <button class="btn" onclick="modal1.open();">Open Basic Modal</button>
-                `,
+                templateId: "js-popzy-modal-6",
             });
             modal6Btn.onclick = () => {
                 modal6.open();
             };
 
-            // Youtube Embed Modal
             const modal7Btn = document.querySelector(".js-popzy-modal-7");
             const modal7 = new Popzy({
-                content: `<iframe width="560" height="315" src="https://www.youtube.com/embed/RDfwGkasp58?si=g8qSqHld--Uimjme" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
+                templateId: "js-popzy-modal-7",
             });
             modal7Btn.onclick = () => {
                 modal7.open();
